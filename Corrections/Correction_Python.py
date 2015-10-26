@@ -22,7 +22,7 @@ name = "Stan"
 
 #   FIXME: Print
 #   Print the following sentence in the console "You are NAME and you are AGE years old !". Don't forget to add a newline at the end
-print "You are", name, "and you are", age, "years old!"
+print "You are", name, "and you are", age, "years old!" \n
 
 #   FiXME: Concatenation
 #   Create a new string variable called "hello" which value is "Hello ". Add "name" at the end of "hello" (Concatenation) then print it
@@ -34,29 +34,28 @@ print hello
 #   create a new string array called "shoppingList", with three elements of your choice. Create an int variable containing the number of
 #   elements in "shoppingList" (using a function of the array/using the array)
 shoppingList = ["Sugar", "Raspberry", "Pi"]
-nbOfElts = len(shoppingList)
-print nbOfElts
+length  = len(shoppingList)
+print length
 
 #   FIXME: For-loop - Integer
 #   Create a simple for-loop for an integer "i" going from 1 to 10 that print the value of "i"
-for i in xrange(1,10):
+for i in range(1,10):
     print i
 
 #   FIXME: For-loop - shoppingList
 #   Create a for loop that iterate through "shoppingList" and prints each element.
-for i in xrange(0, nbOfElts):
-    print shoppingList[i]
+for items in shoppingList:
+    print items
 
 #   FIXME: Foreach-loop
 #   Do the same with a foreach-loop.
-for item in shoppingList:
-    print item
+No for each loop in Python
 
 #   FIXME: If-statement
 #   Modify the first for-loop (with i from 1 to 10) such that it prints "(value of i) is even" when "i" is divisible
 #   by 2 (You may want to learn more about "modulo" (%)). Else, print "(value of i) is odd".
 for i in xrange(1,10):
-    if i%2:
+    if i % 2 == 0:
         print i,"is odd"
     else:
         print i,"is even"
@@ -69,10 +68,8 @@ element = "Tea"
 tmp = 0
 for item in shoppingList:
     if element == item:
-        tmp = 1
-
-if tmp == 1:
-    print "You have to buy", element,"!"
+        print "You have to buy", element , "!"
+        break
 else:
     print "Nope, you don't need", element
 
@@ -103,17 +100,17 @@ Hello("Stan")
 #   FIXME: Functions - Multiple parameters
 #   Create a function that takes two integers as parameters and returns the addition of these two.
 #   You can do the same with multiplication, subtraction and division.
-def Addition(nb1, nb2):
-    return nb1+nb2
+def Addition(num1, num2):
+    return num1 + num2
 
-def Subtraction(nb1, nb2):
-    return nb1-nb2
+def Subtraction(num1, num2):
+    return num1 - num2
 
-def Multiplication(nb1, nb2):
-    return nb1*nb2
+def Multiplication(num1, num2):
+    return num1 * num2
 
-def Division(nb1, nb2):
-    return nb1/nb2
+def Division(num1, num2):
+    return num1 / num2
 
 print Addition(18,24)
 print Division(336,8)
@@ -128,9 +125,9 @@ print "You entered", stringy
 #   FIXME: While loop
 #   Create a while loop that takes a number and divides it by 2 until it is less than 3
 number = 100
-while number >= 3:
-    number/=2
-    print number
+while number < 3:
+    number = number / 2
+print number
 
 #   FIXME: do-While loop
 #   Do the same with a do-while loop
@@ -236,8 +233,8 @@ def Nor(nb1, nb2):
 #   FIXME - Reverse
 #   Create a function that reverse a string (basic method)
 def reverseString(stringy):
-    stringy2 = ""
-    for x in range(len(stringy)-1,-1, -1):
-        stringy2 += stringy[x]
-    return stringy2
+    new_reverse = ''
+    for char in stringy:
+        new_reverse  = char + new_reverse
+    return new_reverse
 print reverseString("Hello!")
